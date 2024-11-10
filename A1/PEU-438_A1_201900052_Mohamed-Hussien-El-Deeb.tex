@@ -222,7 +222,60 @@ Where $j_\nu$ is the emission function of a specific wavelength.
 
 \section{Problem 3}
 
+\[
+    I_\nu = I_\nu(\tau_\nu=0) e^{-\tau_{\lambda,0}} + \int_{0}^{\tau_{\lambda,0}} S_\nu(\tau_\nu) e^{-(\tau_{\lambda,0} - \tau_\nu)} \, d\tau_\nu
+\]
 
+\[
+    I_\nu(\tau_\nu=0) = I_{\lambda,0},\quad S_\nu(\tau_\nu) = S_\nu
+\]
+
+\[
+    I_\nu = I_{\lambda,0} e^{-\tau_{\lambda,0}} + S_\nu e^{-\tau_{\lambda,0}} \int_{0}^{\tau_{\lambda,0}} e^{\tau_\nu} \, d\tau_\nu
+\]
+
+\[
+    I_\nu = I_{\lambda,0} e^{-\tau_{\lambda,0}} + S_\nu (1 - e^{-\tau_{\lambda,0}})
+\]
+
+
+\subsection{$\tau_{\lambda,0} \ll 1$}
+
+\[
+    e^{-\tau_{\lambda,0}} \approx 1 - \tau_{\lambda,0}
+\]
+
+\[
+    I_\nu = (1 - \tau_{\lambda,0})I_{\lambda,0} + \tau_{\lambda,0}S_\nu
+\]
+
+\[
+    I_\nu = I_{\lambda,0} + (S_\nu - I_{\lambda,0})\tau_{\lambda,0}
+\]
+
+\[
+    S_\nu = \frac{j_\nu}{\alpha_\nu},\quad \tau_{\lambda,0} = \alpha_\nu L
+\]
+
+\[
+    I_\nu = I_{\lambda,0} (1 - \alpha_\nu L) + j_\nu L
+\]
+
+\[
+    I_\nu = I_{\lambda,0} + (j_\nu - \alpha_\nu I_{\lambda,0})L
+\]
+
+Where $j_\nu$ is the emission function of a specific wavelength and $a_\nu$ is the absorption coefficient for a specific wavelength.
+
+\subsection{$\tau_{\lambda,0} \gg 1$}
+
+\[
+    I_\nu = S_\nu
+\]
+
+\[
+    I_\nu = B_\lambda(T) = \frac{2 h c^2}{\lambda^5} \cdot \frac{1}{e^{\frac{h c}{\lambda k_B T}} - 1}
+\]
 
 \newpage
 
