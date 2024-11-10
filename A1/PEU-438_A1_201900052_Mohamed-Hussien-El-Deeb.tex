@@ -187,8 +187,7 @@ below the threshold needed to stimulate the photoreceptors.
     I_\nu = S_\nu (1 - e^{-\tau_{\lambda,0}})
 \]
 
-
-\subsection{$\tau_{\lambda,0} \ll 1$}
+\subsection{Small Optical Depth}
 
 \[
     e^{-\tau_{\lambda,0}} \approx 1 - \tau_{\lambda,0}
@@ -208,7 +207,7 @@ below the threshold needed to stimulate the photoreceptors.
 
 Where $j_\nu$ is the emission function of a specific wavelength.
 
-\subsection{$\tau_{\lambda,0} \gg 1$}
+\subsection{Large Optical Depth}
 
 \[
     I_\nu = S_\nu
@@ -221,6 +220,8 @@ Where $j_\nu$ is the emission function of a specific wavelength.
 \newpage
 
 \section{Problem 3}
+
+\subsection{General Solution}
 
 \[
     I_\nu = I_\nu(\tau_\nu=0) e^{-\tau_{\lambda,0}} + \int_{0}^{\tau_{\lambda,0}} S_\nu(\tau_\nu) e^{-(\tau_{\lambda,0} - \tau_\nu)} \, d\tau_\nu
@@ -238,8 +239,7 @@ Where $j_\nu$ is the emission function of a specific wavelength.
     I_\nu = I_{\lambda,0} e^{-\tau_{\lambda,0}} + S_\nu (1 - e^{-\tau_{\lambda,0}})
 \]
 
-
-\subsection{$\tau_{\lambda,0} \ll 1$}
+\subsection{Small Optical Depth}
 
 \[
     e^{-\tau_{\lambda,0}} \approx 1 - \tau_{\lambda,0}
@@ -267,7 +267,7 @@ Where $j_\nu$ is the emission function of a specific wavelength.
 
 Where $j_\nu$ is the emission function of a specific wavelength and $a_\nu$ is the absorption coefficient for a specific wavelength.
 
-\subsection{$\tau_{\lambda,0} \gg 1$}
+\subsection{Large Optical Depth}
 
 \[
     I_\nu = S_\nu
@@ -281,13 +281,119 @@ Where $j_\nu$ is the emission function of a specific wavelength and $a_\nu$ is t
 
 \section{Problem 4}
 
+\subsection{Brightness Temperature and Energy Regime}
 
+\subsubsection{Brightness Temperature}
+
+\bigskip
+
+\textbf{Convert Angular Diameter to Radians}
+
+{\footnotesize
+    \[
+        \theta = 4.3' \times \left( \dfrac{1\deg}{60'} \right) \times \left( \dfrac{\pi\ \text{rad}}{180\deg} \right) = 4.3 \times \dfrac{\pi}{10800} \approx 1.2507 \times 10^{-3}\ \text{rad}
+    \]
+}
+
+\textbf{Calculate the Solid Angle $\Omega$}
+
+{\footnotesize
+    \[
+        \Omega = \pi {\left( \dfrac{\theta}{2} \right)}^2 = \pi {\left( \dfrac{1.2507 \times 10^{-3}\ \text{rad}}{2} \right)}^2 = \pi {\left( 6.2535 \times 10^{-4}\ \text{rad} \right)}^2 \approx 1.2277 \times 10^{-6}\ \text{sr}
+    \]
+}
+
+\textbf{Convert Flux Density to SI Units}
+
+{\tiny
+    \[
+        F_{100} = \left(1.6 \times 10^{-19} \frac{\text{erg}}{\text{cm}^2\ \text{s}\ \text{Hz}}\right) \times \left( \dfrac{1 \times 10^{-7}\text{J}}{1\ \text{erg}} \right) \times \left( \dfrac{1}{{(1 \times 10^{-2}\ \text{m})}^2} \right) = 1.6 \times 10^{-19} \times 1 \times 10^{-7} \times 1 \times 10^{4} \frac{\text{W}}{\text{m}^2\ \text{Hz}}
+    \]
+}
+
+\[
+    F_{100} = 1.6 \times 10^{-22} \frac{\text{W}}{\text{m}^2\ \text{Hz}}
+\]
+
+\textbf{Find the Wavelength $\lambda$}
+
+\[
+    \lambda = \dfrac{c}{\nu} = \dfrac{3.0 \times 10^8\text{m s}^{-1}}{1.0 \times 10^8\text{Hz}} = 3.0\text{m}
+\]
+
+\textbf{Brightness Temperature}
+
+\[
+    T_b = \dfrac{F_\nu \lambda^2}{2 k \Omega}
+\]
+
+Where:
+\begin{itemize}
+    \item $F_\nu$ is the flux density at frequency $\nu$
+    \item $\lambda$ is the wavelength
+    \item $k$ is Boltzmann's constant ($1.38 \times 10^{-23}\text{J K}^{-1}$)
+\end{itemize}
+
+Substitute the values:
+
+\[
+    T_b = \dfrac{(1.6 \times 10^{-22}\text{W m}^{-2}\text{Hz}^{-1}) \times {(3.0\text{m})}^2}{2 \times (1.38 \times 10^{-23}\text{J K}^{-1}) \times (1.2277 \times 10^{-6}\text{sr})} = 4.247 \times 10^{7}\text{K}
+\]
+
+\subsubsection{Energy Regime}
+
+Compare $h \nu$ and $k T_b$:
+
+\[
+    h \nu = (6.626 \times 10^{-34}\text{J s})(1.0 \times 10^{8}\text{Hz}) = 6.626 \times 10^{-26}\text{J}
+\]
+
+\[
+    k T_b = (1.38 \times 10^{-23}\text{J K}^{-1})(4.247 \times 10^{7}\text{K}) = 5.861 \times 10^{-16}\text{J}
+\]
+
+Since $h \nu \ll k T_b$, the emission is in the \textbf{Rayleigh-Jeans} regime (long-wavelength limit of the blackbody curve).
+
+\bigskip
+
+\subsection{Effect of Compact Emitting Region on Brightness Temperature}
+
+If the actual emitting region is more compact, the angular diameter $\theta$ is smaller, leading to a smaller solid angle $\Omega$.
+
+Since:
+
+\[
+    T_b \propto \dfrac{1}{\Omega}
+\]
+
+A smaller $\Omega$ results in a higher brightness temperature $T_b$.
+
+\bigskip
+
+\subsection{Frequency at Which the Radiation Peaks (Wien's Law)}
+
+Use Wien's Law for frequency:
+
+\[
+    \nu_{\text{max}} = \dfrac{k T}{h} \times x
+\]
+
+Where:
+\begin{itemize}
+    \item $k$ is Boltzmann's constant
+    \item $h$ is Planck's constant
+    \item $x$ is a constant approximately equal to 2.8214
+\end{itemize}
+
+Calculate $\nu_{\text{max}}$:
+
+\[
+    \nu_{\text{max}} = \dfrac{(1.38 \times 10^{-23}\text{J K}^{-1})(4.247 \times 10^{7}\text{K})}{6.626 \times 10^{-34}\text{J s}} \times 2.8214 = 2.497 \times 10^{18}\text{Hz}
+\]
 
 \newpage
 
 \section{Problem 5}
-
-
 
 \newpage
 
