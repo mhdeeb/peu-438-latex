@@ -34,14 +34,18 @@
 
 \subsection{Blackbody Radiation Energy Inside the Eye}
 
+Radius of the Eye $(r)$:
+
+\[
+    r = 1.5\, \text{cm} = 0.015\, \text{m}
+\]
+
 Volume of the Eye $(V_{eye})$:
 
 \[
     V_{\text{eye}} = \frac{4}{3} \pi r^3
     = \frac{4}{3} \pi {(0.015\, \text{m})}^3 = 1.4137 \times 10^{-5}\, \text{m}^3
 \]
-
-(Here, \( r = 1.5\, \text{cm} = 0.015\, \text{m} \))
 
 Energy Density of Blackbody Radiation (u):
 
@@ -121,14 +125,98 @@ Energy Entering the Eye in 1 Second $(E_{in})$:
 
 \subsection{Answer}
 
-The reason it's dark when you close your eyes is that the energy of the blackbody photons inside your eye is
-extremely low—far below the threshold needed to stimulate the photoreceptor cells in your retina.
+It is dark when we close our eyes because the energy of the blackbody photons inside the eye is
+below the threshold needed to stimulate the photoreceptors.
 
 \newpage
 
 \section{Problem 2}
 
+% \[
+%     I_\nu(s) = I_\nu(s_0) e^{-\tau_\nu(s_0, s)} + \int_{s_0}^{s} S_\nu(s') e^{-\tau_\nu(s', s)} \, ds'
+% \]
+% \[
+%     \tau_\nu(s_1, s_2) \stackrel{\text{def}}{=} \int_{s_1}^{s_2} \alpha_\nu(s) \, ds = A_\nu(s_2) - A_\nu(s_1)
+% \]
 
+% \[
+%     I_\nu(s) = I_\nu(0) e^{-\tau_\nu(0, s)} + \int_{0}^{s} S_\nu(s') e^{-\tau_\nu(s', s)} \, ds'
+% \]
+% \[
+%     I_\nu(s) = S_\nu \int_{0}^{s} e^{-\tau_\nu(s', s)} \, ds'
+% \]
+% \[
+%     I_\nu(s) = S_\nu \int_{0}^{s} e^{A_\nu(s') - A_\nu(s)} \, ds'
+% \]
+% \[
+%     I_\nu(s) = S_\nu e^{- A_\nu(s)} \int_{0}^{s} e^{A_\nu(s')} \, ds'
+% \]
+% \[
+%     I_\nu(s) = S_\nu e^{- A_\nu(s)} (e^{A_\nu(s)} - e^{A_\nu(0)})
+% \]
+% \[
+%     I_\nu(s) = S_\nu (1 - e^{A_\nu(0) - A_\nu(s)})
+% \]
+% \[
+%     I_\nu(s) = S_\nu (1 - e^{\tau_\nu(s, 0)})
+% \]
+
+\subsection{General Solution}
+
+% \[
+%     I_\nu(s) = I_\nu(s_0) e^{-\tau_\nu(s_0, s)} + \int_{s_0}^{s} S_\nu(s') e^{-\tau_\nu(s', s)} \, ds'
+% \]
+
+% \[
+%     \tau_\nu(s_1, s_2) \stackrel{\text{def}}{=} \int_{s_1}^{s_2} \alpha_\nu(s) \, ds
+% \]
+
+\[
+    I_\nu = I_\nu(\tau_\nu=0) e^{-\tau_{\lambda,0}} + \int_{0}^{\tau_{\lambda,0}} S_\nu(\tau_\nu) e^{-(\tau_{\lambda,0} - \tau_\nu)} \, d\tau_\nu
+\]
+
+\[
+    I_\nu(\tau_\nu=0) = 0,\quad S_\nu(\tau_\nu) = S_\nu
+\]
+
+\[
+    I_\nu = S_\nu e^{-\tau_{\lambda,0}} \int_{0}^{\tau_{\lambda,0}} e^{\tau_\nu} \, d\tau_\nu
+\]
+
+\[
+    I_\nu = S_\nu (1 - e^{-\tau_{\lambda,0}})
+\]
+
+
+\subsection{$\tau_{\lambda,0} \ll 1$}
+
+\[
+    e^{-\tau_{\lambda,0}} \approx 1 - \tau_{\lambda,0}
+\]
+
+\[
+    I_\nu = S_\nu \tau_{\lambda,0}
+\]
+
+\[
+    S_\nu = \frac{j_\nu}{\alpha_\nu},\quad \tau_{\lambda,0} = \alpha_\nu L
+\]
+
+\[
+    I_\nu = j_\nu L
+\]
+
+Where $j_\nu$ is the emission function of a specific wavelength.
+
+\subsection{$\tau_{\lambda,0} \gg 1$}
+
+\[
+    I_\nu = S_\nu
+\]
+
+\[
+    I_\nu = B_\lambda(T) = \frac{2 h c^2}{\lambda^5} \cdot \frac{1}{e^{\frac{h c}{\lambda k_B T}} - 1}
+\]
 
 \newpage
 

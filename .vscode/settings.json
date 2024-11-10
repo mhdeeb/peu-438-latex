@@ -117,7 +117,12 @@
       "tools": ["latexmk", "copy"]
     }
   ],
-  "cSpell.words": ["Chebyshev", "Civita", "Moivre's"],
+  "cSpell.words": [
+    "Chebyshev",
+    "Civita",
+    "Moivre's",
+    "photoreceptors"
+  ],
   "latex-workshop.linting.chktex.exec.args": [
     "-wall",
     "-n22",
