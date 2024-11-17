@@ -1,0 +1,309 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=0.75in}
+
+\begin{document}
+
+\subsection*{1. Radiative Transfer Fundamentals}
+
+\begin{itemize}
+    \item \textbf{Specific Intensity \( I_\nu \):}
+          \[
+              dE = I_\nu \, dA \, dt \, d\Omega \, d\nu
+          \]
+    \item \textbf{Radiative Transfer Equation (RTE):}
+          \[
+              \frac{dI_\nu}{d\tau_\nu} = -I_\nu + S_\nu
+          \]
+          where \( \tau_\nu \) is the optical depth and \( S_\nu \) is the source function.
+    \item \textbf{Optical Depth \( \tau_\nu \):}
+          \[
+              \tau_\nu = \int \alpha_\nu \, ds
+          \]
+          where \( \alpha_\nu \) is the absorption coefficient per unit length.
+    \item \textbf{General Solution to RTE:}
+          \[
+              I_\nu(\tau_\nu) = I_\nu(0) e^{-\tau_\nu} + \int_0^{\tau_\nu} S_\nu(t) e^{-(\tau_\nu - t)} \, dt
+          \]
+          For constant \( S_\nu \):
+          \[
+              I_\nu = I_\nu(0) e^{-\tau_\nu} + S_\nu (1 - e^{-\tau_\nu})
+          \]
+    \item \textbf{Source Function \( S_\nu \):}
+          \[
+              S_\nu = \frac{j_\nu}{\alpha_\nu}
+          \]
+          where \( j_\nu \) is the emissivity per unit volume, and \( \alpha_\nu \) is the absorption coefficient per unit length.
+    \item \textbf{Limiting Cases:}
+          \begin{itemize}
+              \item \textbf{Optically Thin (\( \tau_\nu \ll 1 \)):}
+                    \[
+                        I_\nu \approx I_\nu(0)(1 - \tau_\nu) + S_\nu \tau_\nu
+                    \]
+              \item \textbf{Optically Thick (\( \tau_\nu \gg 1 \)):}
+                    \[
+                        I_\nu \approx S_\nu
+                    \]
+          \end{itemize}
+\end{itemize}
+
+\subsection*{2. Blackbody Radiation}
+
+\begin{itemize}
+    \item \textbf{Planck Function:}
+          \[
+              B_\nu(T) = \frac{2h\nu^3}{c^2} \frac{1}{e^{h\nu/(kT)} - 1}
+          \]
+    \item \textbf{Energy Density of Blackbody Radiation:}
+          \[
+              u = a T^4
+          \]
+          where \( a = \dfrac{8\pi^5 k^4}{15 h^3 c^3} \approx 7.5657 \times 10^{-16} \, \mathrm{J\,m^{-3}\,K^{-4}} \) is the radiation constant.
+    \item \textbf{Radiation Pressure:}
+          \[
+              P_{\text{rad}} = \frac{1}{3} u = \frac{a}{3} T^4
+          \]
+    \item \textbf{Stefan-Boltzmann Law:}
+          \[
+              F = \sigma T^4
+          \]
+          where \( F \) is the total energy flux, and \( \sigma = \dfrac{2\pi^5 k^4}{15 h^3 c^2} \approx 5.6704 \times 10^{-8} \, \mathrm{W\,m^{-2}\,K^{-4}} \) is the Stefan-Boltzmann constant.
+    \item \textbf{Average Photon Energy:}
+          \[
+              \langle h\nu \rangle \approx 2.7\,kT
+          \]
+    \item \textbf{Wien's Displacement Law:}
+          \begin{itemize}
+              \item \textbf{Wavelength Form:}
+                    \[
+                        \lambda_{\text{max}} T = 2.8978 \times 10^{-3} \, \mathrm{m\,K}
+                    \]
+              \item \textbf{Frequency Form:}
+                    \[
+                        \nu_{\text{max}} = \frac{k T}{h} \times 2.8214
+                    \]
+          \end{itemize}
+\end{itemize}
+
+\subsection*{3. Kirchhoff's Law for Thermal Emission}
+
+\begin{itemize}
+    \item \textbf{Kirchhoff's Law:}
+          \[
+              \frac{j_\nu}{\alpha_\nu} = B_\nu(T)
+          \]
+          implying that "good absorbers are good emitters."
+    \item \textbf{Blackbody Radiation Condition:}
+          \[
+              a_\nu = 1
+          \]
+          for an ideal blackbody, where \( a_\nu \) is the absorptivity at frequency \( \nu \).
+\end{itemize}
+
+\subsection*{4. Bremsstrahlung (Free-Free Emission)}
+
+\begin{itemize}
+    \item \textbf{Emissivity per Unit Volume and Frequency \( j_\nu \):}
+          \[
+              j_\nu = \frac{16}{3} \left( \frac{2\pi}{3} \right)^{1/2} \frac{e^6}{m_e^2 c^3} Z^2 n_e n_i \frac{1}{\sqrt{k T}} e^{-h\nu/(kT)} \overline{g}_{ff}
+          \]
+          where \( \overline{g}_{ff} \) is the velocity-averaged Gaunt factor.
+    \item \textbf{Total Emissivity Integrated over Frequency:}
+          \[
+              j(T) = C_1 Z^2 n_e n_i T^{1/2}
+          \]
+          where \( C_1 \) is a constant that depends on fundamental constants and the Gaunt factor.
+    \item \textbf{Free-Free Absorption Coefficient \( \alpha_\nu^{ff} \):}
+          \[
+              \alpha_\nu^{ff} = \frac{4}{3} \left( \frac{2\pi}{3} \right)^{1/2} \frac{e^6}{m_e^2 c} Z^2 n_e n_i \frac{1}{\nu^3 \sqrt{k T}} \left(1 - e^{-h\nu/(kT)}\right) \overline{g}_{ff}
+          \]
+    \item \textbf{Optical Depth for Free-Free Absorption:}
+          \[
+              \tau_\nu = \alpha_\nu^{ff} L
+          \]
+          where \( L \) is the path length.
+\end{itemize}
+
+\subsection*{5. Larmor's Formula for Instantaneous Power}
+
+\begin{itemize}
+    \item \textbf{Instantaneous Power of an Accelerating Charge:}
+          \[
+              P = \frac{q^2 a^2}{6\pi \varepsilon_0 c^3}
+          \]
+\end{itemize}
+
+\subsection*{6. Kinetic Theory and Thermal Velocities}
+
+\begin{itemize}
+    \item \textbf{Root-Mean-Square Speed of Particles:}
+          \[
+              v_{\text{rms}} = \sqrt{\frac{3 k T}{m}}
+          \]
+    \item \textbf{Kinetic Energy per Particle:}
+          \[
+              E_k = \frac{1}{2} m v_{\text{rms}}^2 = \frac{3}{2} k T
+          \]
+    \item \textbf{Hydrostatic Equilibrium:}
+          \[
+              \frac{dP}{dr} = -\rho \frac{G M(r)}{r^2}
+          \]
+    \item \textbf{Virial Theorem for Spherical Systems:}
+          \[
+              k T = \frac{G M m_p}{3 R}
+          \]
+          where \( m_p \) is the proton mass.
+\end{itemize}
+
+\subsection*{7. Photon Energy and Frequency Relations}
+
+\begin{itemize}
+    \item \textbf{Energy per Photon:}
+          \[
+              E = h\nu
+          \]
+    \item \textbf{Wien's Law (High-Frequency Approximation):}
+          \[
+              I(\nu, T) \approx \frac{2h\nu^3}{c^2} e^{-h\nu/(kT)}
+          \]
+    \item \textbf{Rayleigh-Jeans Law (Low-Frequency Approximation):}
+          \[
+              I(\nu, T) \approx \frac{2\nu^2 k T}{c^2}
+          \]
+    \item \textbf{Brightness Temperature \( T_b \):}
+          \[
+              T_b = \frac{c^2 I_\nu}{2 k \nu^2}
+          \]
+          Applicable in the Rayleigh-Jeans limit (\( h\nu \ll kT \)).
+\end{itemize}
+
+\subsection*{8. Emission and Absorption in Plasma}
+
+\begin{itemize}
+    \item \textbf{Integrated Volume Emissivity:}
+          \[
+              j(T) = C_1 Z^2 n_e n_i T^{1/2}
+          \]
+    \item \textbf{Optical Depth \( \tau_\nu \):}
+          \[
+              \tau_\nu = \alpha_\nu L
+          \]
+    \item \textbf{Mean Free Path \( \lambda_{\text{mfp}} \):}
+          \[
+              \lambda_{\text{mfp}} = \frac{1}{n \sigma}
+          \]
+\end{itemize}
+
+\subsection*{9. Flux and Luminosity}
+
+\begin{itemize}
+    \item \textbf{Flux from a Point Source (Inverse Square Law):}
+          \[
+              F = \frac{L}{4\pi r^2}
+          \]
+    \item \textbf{Flux in Terms of Specific Intensity:}
+          \[
+              F = \int I_\nu \cos \theta \, d\Omega
+          \]
+          For an isotropic source:
+          \[
+              F = \pi I_\nu
+          \]
+    \item \textbf{Luminosity of a Spherical Blackbody:}
+          \[
+              L = 4\pi R^2 \sigma T^4
+          \]
+    \item \textbf{Luminosity of Optically Thin Bremsstrahlung Emission:}
+          \[
+              L = j(T) V = C_1 Z^2 n_e n_i T^{1/2} \times \frac{4}{3}\pi R^3
+          \]
+\end{itemize}
+
+\subsection*{10. Solutions to Radiative Transfer in Specific Cases}
+
+\begin{itemize}
+    \item \textbf{Optically Thin Medium (\( \tau_\nu \ll 1 \)):}
+          \[
+              I_\nu \approx I_\nu(0) + j_\nu L
+          \]
+          assuming negligible absorption.
+    \item \textbf{Optically Thick Medium (\( \tau_\nu \gg 1 \)):}
+          \[
+              I_\nu \approx S_\nu
+          \]
+    \item \textbf{General Solution with No Incident Intensity (\( I_\nu(0) = 0 \)) and Constant \( S_\nu \):}
+          \[
+              I_\nu = S_\nu (1 - e^{-\tau_\nu})
+          \]
+\end{itemize}
+
+\subsection*{11. Thermal Bremsstrahlung Spectrum}
+
+\begin{itemize}
+    \item \textbf{Power Radiated in a Frequency Interval \( (\nu_1, f\nu_1) \):}
+          \[
+              P = \int_{\nu_1}^{f\nu_1} j_\nu(\nu) \, d\nu \propto n_e n_i Z^2 T^{1/2} \left( e^{-h\nu_1/(kT)} - e^{-h f\nu_1/(kT)} \right)
+          \]
+    \item \textbf{Frequency of Maximum Emission:}
+          \[
+              h\nu_{\text{max}} \approx k T
+          \]
+\end{itemize}
+
+\subsection*{12. Units and Constants}
+
+\begin{itemize}
+    \item \textbf{Constants:}
+          \begin{align*}
+               & h = 6.626 \times 10^{-34} \, \mathrm{J\,s}                   &  & \text{(Planck's constant)}         \\
+               & c = 3.00 \times 10^8 \, \mathrm{m\,s^{-1}}                   &  & \text{(Speed of light)}            \\
+               & k = 1.381 \times 10^{-23} \, \mathrm{J\,K^{-1}}              &  & \text{(Boltzmann's constant)}      \\
+               & \varepsilon_0 = 8.854 \times 10^{-12} \, \mathrm{F\,m^{-1}}  &  & \text{(Vacuum permittivity)}       \\
+               & e = 1.602 \times 10^{-19} \, \mathrm{C}                      &  & \text{(Elementary charge)}         \\
+               & m_e = 9.109 \times 10^{-31} \, \mathrm{kg}                   &  & \text{(Electron mass)}             \\
+               & m_p = 1.673 \times 10^{-27} \, \mathrm{kg}                   &  & \text{(Proton mass)}               \\
+               & G = 6.674 \times 10^{-11} \, \mathrm{N\,m^2\,kg^{-2}}        &  & \text{(Gravitational constant)}    \\
+               & \sigma = 5.6704 \times 10^{-8} \, \mathrm{W\,m^{-2}\,K^{-4}} &  & \text{(Stefan-Boltzmann constant)}
+          \end{align*}
+    \item \textbf{Unit Conversions:}
+          \begin{align*}
+               & 1 \, \mathrm{eV} = 1.602 \times 10^{-19} \, \mathrm{J} \\
+               & 1 \, \mathrm{erg} = 1 \times 10^{-7} \, \mathrm{J}     \\
+               & 1 \, \mathrm{ly} = 9.461 \times 10^{15} \, \mathrm{m}
+          \end{align*}
+\end{itemize}
+
+\subsection*{13. Additional Relations}
+
+\begin{itemize}
+    \item \textbf{Density in Terms of Mass and Volume:}
+          \[
+              \rho = \frac{M}{V}
+          \]
+    \item \textbf{Particle Number Density:}
+          \[
+              n = \frac{\rho}{\mu m_p}
+          \]
+          where \( \mu \) is the mean molecular weight.
+    \item \textbf{Total Bremsstrahlung Luminosity for Optically Thin Plasma:}
+          \[
+              L = C_1 Z^2 n_e n_i T^{1/2} V
+          \]
+    \item \textbf{Hydrostatic Equilibrium (Isothermal Gas Sphere):}
+          \[
+              \frac{dP}{dr} = -\rho \frac{G M(r)}{r^2}
+          \]
+    \item \textbf{Virial Theorem for Gravitational Systems:}
+          \[
+              2 E_{\text{kin}} + E_{\text{grav}} = 0
+          \]
+    \item \textbf{Relation between Temperature and Gravitational Potential:}
+          \[
+              k T = \frac{G M m_p}{3 R}
+          \]
+          (Derived from the virial theorem for spherical systems.)
+\end{itemize}
+
+\end{document}

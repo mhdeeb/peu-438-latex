@@ -1,0 +1,290 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, geometry}
+\geometry{margin=1in}
+
+\begin{document}
+
+\begin{center}
+    \Large\textbf{Formula Sheet for High-Energy Astrophysics and Radiative Transfer}
+\end{center}
+
+\section*{1. Radiative Transfer Basics}
+
+\textbf{Specific Intensity \( I_\nu \):}
+\begin{itemize}
+    \item Describes the amount of energy passing through a unit area, in a unit time, within a unit solid angle, and per unit frequency interval.
+          \[
+              dE = I_\nu \, dA \, dt \, d\Omega \, d\nu
+          \]
+\end{itemize}
+
+\textbf{Radiative Transfer Equation (RTE):}
+\begin{itemize}
+    \item Governs the change in specific intensity as radiation travels through a medium.
+          \[
+              \frac{dI_\nu}{d\tau_\nu} = -I_\nu + S_\nu
+          \]
+          \begin{itemize}
+              \item \( \tau_\nu \): Optical depth, measures how opaque the medium is.
+                    \[
+                        \tau_\nu = \int \alpha_\nu \, ds
+                    \]
+              \item \( \alpha_\nu \): Absorption coefficient.
+              \item \( S_\nu \): Source function, represents emission per unit absorption.
+                    \[
+                        S_\nu = \frac{j_\nu}{\alpha_\nu}
+                    \]
+              \item \( j_\nu \): Emissivity, the energy emitted per unit volume, time, solid angle, and frequency.
+          \end{itemize}
+\end{itemize}
+
+\textbf{General Solution to RTE (with constant \( S_\nu \)):}
+\begin{itemize}
+    \item Describes how \( I_\nu \) changes with optical depth.
+          \[
+              I_\nu = I_\nu(0) e^{-\tau_\nu} + S_\nu \left(1 - e^{-\tau_\nu}\right)
+          \]
+\end{itemize}
+
+\textbf{Limiting Cases:}
+\begin{itemize}
+    \item \textbf{Optically Thin (\( \tau_\nu \ll 1 \)):}
+          \[
+              I_\nu \approx I_\nu(0)\left(1 - \tau_\nu\right) + S_\nu \tau_\nu
+          \]
+    \item \textbf{Optically Thick (\( \tau_\nu \gg 1 \)):}
+          \[
+              I_\nu \approx S_\nu
+          \]
+\end{itemize}
+
+\section*{2. Blackbody Radiation}
+
+\textbf{Planck's Law (Blackbody Spectrum):}
+\begin{itemize}
+    \item Describes the specific intensity of blackbody radiation at frequency \( \nu \) and temperature \( T \).
+          \[
+              B_\nu(T) = \frac{2h\nu^3}{c^2} \frac{1}{e^{h\nu/(kT)} - 1}
+          \]
+          \begin{itemize}
+              \item \( h \): Planck's constant.
+              \item \( c \): Speed of light.
+              \item \( k \): Boltzmann's constant.
+          \end{itemize}
+\end{itemize}
+
+\textbf{Stefan-Boltzmann Law:}
+\begin{itemize}
+    \item Total energy flux emitted by a blackbody per unit area.
+          \[
+              F = \sigma T^4
+          \]
+          \begin{itemize}
+              \item \( \sigma \): Stefan-Boltzmann constant \( (\approx 5.6704 \times 10^{-8} \, \mathrm{W\,m^{-2}\,K^{-4}}) \).
+          \end{itemize}
+\end{itemize}
+
+\textbf{Wien's Displacement Law:}
+\begin{itemize}
+    \item Relates the temperature of a blackbody to the wavelength at which it emits most intensely.
+          \[
+              \lambda_{\text{max}} T = 2.898 \times 10^{-3} \, \mathrm{m\,K}
+          \]
+          \begin{itemize}
+              \item \( \lambda_{\text{max}} \): Wavelength at peak emission.
+          \end{itemize}
+\end{itemize}
+
+\section*{3. Kirchhoff's Law}
+
+\begin{itemize}
+    \item States that, at thermal equilibrium, the emissivity (\( j_\nu \)) and absorptivity (\( \alpha_\nu \)) are related by the blackbody function.
+          \[
+              \frac{j_\nu}{\alpha_\nu} = B_\nu(T)
+          \]
+\end{itemize}
+
+\section*{4. Bremsstrahlung (Free-Free Emission)}
+
+\textbf{Emissivity \( j_\nu \):}
+\begin{itemize}
+    \item Emission from electrons decelerating in the electric fields of ions.
+          \[
+              j_\nu \propto n_e n_i Z^2 T^{-1/2} e^{-h\nu/(kT)}
+          \]
+          \begin{itemize}
+              \item \( n_e \): Electron density.
+              \item \( n_i \): Ion density.
+              \item \( Z \): Charge number of ions.
+              \item The exponential term shows that higher frequencies are suppressed.
+          \end{itemize}
+\end{itemize}
+
+\textbf{Free-Free Absorption Coefficient \( \alpha_\nu^{ff} \):}
+\begin{itemize}
+    \item Represents how free electrons absorb photons in the presence of ions.
+          \[
+              \alpha_\nu^{ff} \propto n_e n_i Z^2 T^{-1/2} \nu^{-3} \left(1 - e^{-h\nu/(kT)}\right)
+          \]
+\end{itemize}
+
+\section*{5. Larmor's Formula}
+
+\begin{itemize}
+    \item Calculates the power radiated by an accelerating charged particle.
+          \[
+              P = \frac{q^2 a^2}{6\pi \varepsilon_0 c^3}
+          \]
+          \begin{itemize}
+              \item \( q \): Charge of the particle.
+              \item \( a \): Acceleration.
+              \item \( \varepsilon_0 \): Vacuum permittivity.
+          \end{itemize}
+\end{itemize}
+
+\section*{6. Kinetic Theory and Thermal Velocities}
+
+\textbf{Root-Mean-Square Speed \( v_{\text{rms}} \):}
+\begin{itemize}
+    \item Average speed of particles in a gas at temperature \( T \).
+          \[
+              v_{\text{rms}} = \sqrt{\frac{3 k T}{m}}
+          \]
+          \begin{itemize}
+              \item \( m \): Mass of a gas particle.
+          \end{itemize}
+\end{itemize}
+
+\textbf{Kinetic Energy per Particle:}
+\begin{itemize}
+    \item Energy associated with the motion of particles.
+          \[
+              E_k = \frac{1}{2} m v_{\text{rms}}^2 = \frac{3}{2} k T
+          \]
+\end{itemize}
+
+\section*{7. Hydrostatic Equilibrium}
+
+\begin{itemize}
+    \item Describes the balance between gravity and pressure in a star or gas cloud.
+          \[
+              \frac{dP}{dr} = -\rho \frac{G M(r)}{r^2}
+          \]
+          \begin{itemize}
+              \item \( P \): Pressure.
+              \item \( \rho \): Density.
+              \item \( G \): Gravitational constant.
+              \item \( M(r) \): Mass enclosed within radius \( r \).
+          \end{itemize}
+\end{itemize}
+
+\section*{8. Virial Theorem}
+
+\begin{itemize}
+    \item Relates kinetic and potential energy in gravitational systems.
+          \[
+              2 E_{\text{kin}} + E_{\text{grav}} = 0
+          \]
+    \item For an ideal gas in a spherical distribution:
+          \[
+              k T = \frac{G M m_p}{3 R}
+          \]
+          \begin{itemize}
+              \item \( m_p \): Proton mass.
+              \item \( R \): Radius of the system.
+          \end{itemize}
+\end{itemize}
+
+\section*{9. Photon Energy and Frequency Relations}
+
+\textbf{Energy of a Photon:}
+\begin{itemize}
+    \item The energy carried by a single photon.
+          \[
+              E = h\nu
+          \]
+\end{itemize}
+
+\textbf{Brightness Temperature \( T_b \):}
+\begin{itemize}
+    \item Temperature corresponding to the observed brightness at radio frequencies.
+          \[
+              T_b = \frac{c^2 I_\nu}{2 k \nu^2}
+          \]
+          \begin{itemize}
+              \item \( I_\nu \): Specific intensity.
+          \end{itemize}
+\end{itemize}
+
+\section*{10. Flux and Luminosity}
+
+\textbf{Flux \( F \):}
+\begin{itemize}
+    \item Energy per unit area per unit time received from a source.
+          \[
+              F = \frac{L}{4\pi r^2}
+          \]
+          \begin{itemize}
+              \item \( L \): Luminosity of the source.
+              \item \( r \): Distance to the source.
+          \end{itemize}
+\end{itemize}
+
+\textbf{Luminosity of a Blackbody Sphere:}
+\begin{itemize}
+    \item Total power emitted by a spherical blackbody.
+          \[
+              L = 4\pi R^2 \sigma T^4
+          \]
+          \begin{itemize}
+              \item \( R \): Radius of the sphere.
+          \end{itemize}
+\end{itemize}
+
+\section*{11. Units and Constants}
+
+\textbf{Fundamental Constants:}
+\begin{align*}
+    h             & = 6.626 \times 10^{-34} \, \mathrm{J\,s}              &  & \text{(Planck's constant)}         \\
+    c             & = 3.00 \times 10^8 \, \mathrm{m\,s^{-1}}              &  & \text{(Speed of light)}            \\
+    k             & = 1.381 \times 10^{-23} \, \mathrm{J\,K^{-1}}         &  & \text{(Boltzmann's constant)}      \\
+    G             & = 6.674 \times 10^{-11} \, \mathrm{N\,m^2\,kg^{-2}}   &  & \text{(Gravitational constant)}    \\
+    \sigma        & = 5.6704 \times 10^{-8} \, \mathrm{W\,m^{-2}\,K^{-4}} &  & \text{(Stefan-Boltzmann constant)} \\
+    e             & = 1.602 \times 10^{-19} \, \mathrm{C}                 &  & \text{(Elementary charge)}         \\
+    m_e           & = 9.109 \times 10^{-31} \, \mathrm{kg}                &  & \text{(Electron mass)}             \\
+    m_p           & = 1.673 \times 10^{-27} \, \mathrm{kg}                &  & \text{(Proton mass)}               \\
+    \varepsilon_0 & = 8.854 \times 10^{-12} \, \mathrm{F\,m^{-1}}         &  & \text{(Vacuum permittivity)}
+\end{align*}
+
+\textbf{Useful Conversions:}
+\begin{itemize}
+    \item \( 1 \, \mathrm{eV} = 1.602 \times 10^{-19} \, \mathrm{J} \)
+    \item \( 1 \, \mathrm{erg} = 1 \times 10^{-7} \, \mathrm{J} \)
+    \item \( 1 \, \mathrm{ly} = 9.461 \times 10^{15} \, \mathrm{m} \) \quad (Light-year)
+\end{itemize}
+
+\section*{12. Additional Relations}
+
+\textbf{Density \( \rho \) and Number Density \( n \):}
+\begin{itemize}
+    \item Mass density and particle number density.
+          \[
+              \rho = n m, \quad n = \frac{\rho}{m}
+          \]
+          \begin{itemize}
+              \item \( m \): Mass of a single particle.
+          \end{itemize}
+\end{itemize}
+
+\textbf{Mean Free Path \( \lambda_{\text{mfp}} \):}
+\begin{itemize}
+    \item Average distance a particle travels before interacting.
+          \[
+              \lambda_{\text{mfp}} = \frac{1}{n \sigma}
+          \]
+          \begin{itemize}
+              \item \( \sigma \): Cross-sectional area for interaction.
+          \end{itemize}
+\end{itemize}
+
+\end{document}
