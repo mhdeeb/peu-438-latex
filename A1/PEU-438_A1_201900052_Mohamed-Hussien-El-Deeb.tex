@@ -350,54 +350,8 @@ Calculate $\nu_{\text{max}}$:
 
 \section{Problem 5}
 
-\begin{enumerate}
-    \item[a.] Note that \( j_\nu = P_\nu / 4 \pi \) and that, effectively, \( \alpha_\nu = 0 \), since the cloud is optically thin. Then, using Eq. (1.24),
-          \[
-              I_\nu(b) = \int j_\nu(z) \, dz = \frac{P_\nu}{2\pi} \sqrt{R^2 - b^2}.
-          \]
 
-    \item[b.] The total power emitted by the cloud is \( L = (4/3) \pi R^3 P_\nu \), where \( P = \int P_\nu \, d\nu \). Then
-          \[
-              L = 4 \pi R^2 \sigma T_{\text{eff}}^4,
-          \]
-          by definition of \( T_{\text{eff}} \), so that
-          \[
-              T_{\text{eff}} = \left( \frac{P R}{3 \sigma} \right)^{1/4}.
-          \]
-
-    \item[c.] Let \( d \) be the distance from the spherical cloud to the earth. Energy conservation gives a relation between \( F_\nu \), the flux at the earth, and \( P_\nu \):
-          \[
-              4 \pi d^2 F_\nu = \frac{4}{3} \pi R^3 P_\nu,
-          \]
-          \[
-              F_\nu = \frac{P_\nu R^3}{3 d^2}.
-          \]
-    \item[d.] From Eq. (1.30), with \( S_\nu = B_\nu(T) \), \( I_\nu(0) = 0 \), \( \tau_\nu \ll 1 \),
-          \[
-              I_\nu = B_\nu(T)(1 - e^{-\tau_\nu}) \approx \tau_\nu B_\nu(T) \ll B_\nu(T).
-          \]
-          With the definition of \( T_b \) from Eq. (1.59),
-          \[
-              B_\nu(T_b) \ll B_\nu(T),
-          \]
-          and the monotonicity of \( B_\nu(T) \) with \( T \), we have \( T_b \ll T \).
-    \item[e.] For the optically thick case the results are:
-          \begin{enumerate}
-              \item[a'.] From Eq. (1.30) with \( \tau_\nu \gg 1 \) and with \( S_\nu = B_\nu(T) \) we have \( I_\nu = B_\nu(T) \) independent of \( b \).
-              \item[b'.] Since \( I_\nu = B_\nu \), the flux at the surface is the blackbody flux, so \( T_{\text{eff}} = T \).
-              \item[c'.] The monochromatic flux at the surface is \( \pi B_\nu(T) \) [cf. Eq. (1.14)], so using the inverse square law gives
-                    \[
-                        F_\nu(d) = \pi \left( \frac{R}{d} \right)^2 B_\nu(T).
-                    \]
-              \item[d'.] From (a') and Eq. (1.59) we have \( B_\nu(T_b) = B_\nu(T) \), which implies \( T_b = T \).
-          \end{enumerate}
-\end{enumerate}
-
-/////////////////////////////
-
-A certain gas emits thermally at the rate \( P(\nu) \) (power per unit volume and frequency range). A spherical cloud of this gas has radius \( R \), temperature \( T \), and is a distance \( d \) from Earth (\( d \gg R \)).
-
-\subsection*{(a) Optically Thin Cloud: Brightness as a Function of \( b \)}
+\subsection{Optically Thin Cloud: Brightness as a Function of b}
 
 For an optically thin cloud, the observed brightness \( I_\nu(b) \) at Earth is the integrated emission along the line of sight at a distance \( b \) from the cloud center. The emission coefficient \( j_\nu \) (power emitted per unit volume per unit solid angle per unit frequency) relates to \( P(\nu) \) as:
 
@@ -417,7 +371,7 @@ Thus, the brightness \( I_\nu(b) \) is:
     I_\nu(b) = \int_{-\infty}^{+\infty} j_\nu(s) \, ds = \frac{P(\nu)}{4\pi} \times 2 \sqrt{R^2 - b^2} = \frac{P(\nu)}{2\pi} \sqrt{R^2 - b^2}
 \]
 
-\subsection*{(b) Optically Thin Cloud: Effective Temperature}
+\subsection{Optically Thin Cloud: Effective Temperature}
 
 \( L = (4/3) \pi R^3 P_\nu \), where \( P = \int P_\nu \, d\nu \).
 
@@ -429,7 +383,7 @@ Thus, the brightness \( I_\nu(b) \) is:
     T_{\text{eff}} = \left( \frac{P R}{3 \sigma} \right)^{1/4}.
 \]
 
-\subsection*{(c) Optically Thin Cloud: Flux \( F_\nu \) Measured at Earth}
+\subsection{Optically Thin Cloud: Flux \( F_\nu \) Measured at Earth}
 
 The total luminosity \( L_\nu \) emitted by the cloud at frequency \( \nu \) is:
 \[
@@ -440,7 +394,7 @@ The flux \( F_\nu \) measured at Earth is:
     F_\nu = \frac{L_\nu}{4\pi d^2} = \frac{P(\nu) \times \frac{4}{3} \pi R^3}{4\pi d^2} = \frac{P(\nu) R^3}{3 d^2}
 \]
 
-\subsection*{(d) Optically Thin Cloud: Comparison of Brightness Temperatures}
+\subsection{Optically Thin Cloud: Comparison of Brightness Temperatures}
 
 Since \( T_B(b) \propto \sqrt{R^2 - b^2} \) and \( P(\nu) \) is finite, the measured brightness temperatures \( T_B(b) \) are much less than the actual cloud temperature \( T \):
 \[
@@ -448,9 +402,9 @@ Since \( T_B(b) \propto \sqrt{R^2 - b^2} \) and \( P(\nu) \) is finite, the meas
 \]
 This is because the cloud is optically thin and does not emit as a blackbody along the line of sight.
 
-\subsection*{(e) Optically Thick Cloud}
+\subsection{Optically Thick Cloud}
 
-\textbf{(a) Brightness as a Function of \( b \)}
+\subsubsection{Brightness as a Function of b}
 
 For an optically thick cloud, the specific intensity \( I_\nu(b) \) at any impact parameter \( b \leq R \) is equal to the blackbody intensity:
 \[
@@ -458,21 +412,21 @@ For an optically thick cloud, the specific intensity \( I_\nu(b) \) at any impac
 \]
 since the cloud is opaque and emits as a blackbody at temperature \( T \).
 
-\textbf{(b) Effective Temperature}
+\subsubsection{Effective Temperature}
 
 In this case, the brightness temperature is equal to the actual temperature:
 \[
     T_B(b) = T
 \]
 
-\textbf{(c) Flux \( F_\nu \) Measured at Earth}
+\subsubsection{Flux \( F_\nu \) Measured at Earth}
 
 The flux measured at Earth is calculated from the projected area of the cloud and the blackbody intensity:
 \[
     F_\nu = \frac{\text{Total Power Emitted Towards Earth}}{\text{Area at Distance } d} = \frac{I_\nu(b) \times \text{Projected Area}}{d^2} = \frac{B_\nu(T) \times \pi R^2}{d^2}
 \]
 
-\textbf{(d) Comparison of Brightness Temperatures}
+\subsubsection{Comparison of Brightness Temperatures}
 
 For an optically thick cloud, the measured brightness temperatures are equal to the cloud's temperature:
 \[
